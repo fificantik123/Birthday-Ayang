@@ -1,68 +1,24 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <title>Selamat Ulang Tahun Ayang!</title>
-  <style>
-    body {
-      background-color: #ffecf0;
-      text-align: center;
-      padding: 50px;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-    }
-    h1 {
-      color: #ff4081;
-      font-size: 45px;
-    }
-    p {
-      font-size: 22px;
-      color: #333;
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 20px;
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    #message {
-      margin-top: 30px;
-      font-size: 28px;
-      color: #ff4081;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎉 Hai Ayang! 🎉</h1>
-  <p>Klik tombol di bawah ini ya… 😘</p>
-  <button onclick="showMessage()">Klik di sini</button>
-  <div id="message"></div>
+<script>
+  function showMessage() {
+    document.getElementById("message").innerHTML = "Selamat ulang tahun Ayangkuu tercinta 💖 Semoga panjang umur, sehat selalu, bahagia dunia akhirat, makin sayang sama aku, dan semua impian Ayang terkabul. Love youuu so much! 😘💖✨";
+    setInterval(() => {
+      let heart = document.createElement("div");
+      heart.innerHTML = "💖";
+      heart.style.position = "fixed";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = "0px";
+      heart.style.fontSize = "30px";
+      heart.style.opacity = "0.8";
+      heart.style.zIndex = "9999";
+      document.body.appendChild(heart);
+      let move = setInterval(() => {
+        heart.style.top = parseFloat(heart.style.top) + 2 + "px";
+        if (parseFloat(heart.style.top) > window.innerHeight) {
+          clearInterval(move);
+          heart.remove();
+        }
+      }, 10);
+    }, 300);
+  }
+</script>
 
-  <script>
-    function showMessage() {
-      document.getElementById("message").innerHTML = "Selamat ulang tahun Ayangkuu tercinta 💖 Semoga panjang umur, sehat selalu, bahagia dunia akhirat, makin sayang sama aku, dan semua impian Ayang terkabul. Love youuu so much! 😘💖✨";
-      setInterval(() => {
-        let heart = document.createElement("div");
-        heart.innerHTML = "💖";
-        heart.style.position = "fixed";
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.top = "0px";
-        heart.style.fontSize = "30px";
-        heart.style.opacity = "0.8";
-        heart.style.zIndex = "9999";
-        document.body.appendChild(heart);
-        let move = setInterval(() => {
-          heart.style.top = parseFloat(heart.style.top) + 2 + "px";
-          if (parseFloat(heart.style.top) > window.innerHeight) {
-            clearInterval(move);
-            heart.remove();
-          }
-        }, 10);
-      }, 300);
-    }
-  </script>
-</body>
-</html>
